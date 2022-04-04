@@ -19,7 +19,7 @@ authRouter.get(
 authRouter.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/auth/login/success",
+    successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/auth/login/fail",
   })
 );
@@ -27,7 +27,7 @@ authRouter.get("/facebook", passport.authenticate("facebook"));
 authRouter.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
-    successRedirect: "/auth/login/success",
+    successRedirect: process.env.CLIENT_URL,
     failureRedirect: "/auth/login/fail",
   })
 );
